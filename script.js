@@ -17,8 +17,9 @@ const bubble = document.getElementById("textBubble");
 
 // LOGIN LOGIC
 function login() {
-  const u = document.getElementById("username").value;
-  const p = document.getElementById("password").value;
+  const u = document.getElementById("username").value.trim();
+  const p = document.getElementById("password").value.trim();
+
 
   if (u !== USER || p !== PASS) {
     loginCat.src = "angry.png";
