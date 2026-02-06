@@ -15,7 +15,7 @@ const loginBubble = document.getElementById("loginBubble");
 const cat = document.getElementById("mainCat");
 const bubble = document.getElementById("textBubble");
 
-// LOGIN LOGIC
+// LOGIN
 function login() {
   const u = document.getElementById("username").value.trim();
   const p = document.getElementById("password").value.trim();
@@ -35,7 +35,7 @@ function login() {
   }, 500);
 }
 
-// MAIN CAT CLICK — BUTTON STYLE
+// MAIN CAT CLICK — UNIVERSAL
 cat.addEventListener("click", () => {
   cat.classList.add("press");
   setTimeout(() => cat.classList.remove("press"), 120);
@@ -57,23 +57,22 @@ function showText(text) {
   setTimeout(() => bubble.classList.add("hidden"), 3000);
 }
 
-// CAT PRIORITY (NO happy.png ANYWHERE)
+// CAT PRIORITY
 function updateCat() {
   if (hearts) cat.src = "happy.gif";
   else if (singing) cat.src = "sing.gif";
   else cat.src = "default.gif";
 }
 
-// SING BUTTON
+// SING
 function toggleSing() {
   singing = !singing;
   const song = document.getElementById("song");
-
   singing ? song.play() : song.pause();
   updateCat();
 }
 
-// HEARTS BUTTON (MORE HEARTS)
+// HEARTS
 function toggleHearts() {
   hearts = !hearts;
   document.body.classList.toggle("dark-pink-bg", hearts);
@@ -97,5 +96,5 @@ function createHeart() {
   setTimeout(() => h.remove(), 5000);
 }
 
-// ENSURE DEFAULT ON LOAD
+// DEFAULT ON LOAD
 document.addEventListener("DOMContentLoaded", updateCat);
