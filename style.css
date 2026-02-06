@@ -1,8 +1,8 @@
-/* STOP MOBILE DOUBLE TAP ZOOM */
+/* STOP DOUBLE TAP ZOOM */
 html, body {
-  touch-action: manipulation;
   margin: 0;
   font-family: "Segoe UI", sans-serif;
+  touch-action: manipulation;
 }
 
 .page {
@@ -33,12 +33,14 @@ html, body {
   text-align: center;
 }
 
+/* INPUTS – FONT SIZE 16px STOPS ZOOM */
 input {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  font-size: 16px; /* 🔥 critical */
 }
 
 button {
@@ -57,19 +59,13 @@ button {
   gap: 10px;
 }
 
-/* CAT WRAP */
 .cat-wrap {
   position: relative;
 }
 
-/* FLOATING EFFECT (WRAPPER) */
+/* FLOATING WRAPPER */
 .cat-float {
   animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
 }
 
 /* CAT IMAGE (PNG + GIF) */
@@ -79,12 +75,18 @@ button {
   pointer-events: auto;
 }
 
-/* BUTTON PRESS EFFECT (ALL STATES) */
+/* PRESS EFFECT */
 .cat.press {
   transform: scale(0.93);
 }
 
-/* TEXT BUBBLE (MOBILE SAFE) */
+/* FLOAT ANIMATION */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* TEXT BUBBLE */
 .bubble {
   background: white;
   padding: 6px 12px;
@@ -111,7 +113,7 @@ button {
   top: -20px;
   font-size: 20px;
   animation: fall linear;
-  pointer-events: none; /* critical */
+  pointer-events: none;
 }
 
 @keyframes fall {
