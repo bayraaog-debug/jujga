@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.page.active {
+  display: flex;
+}
+
+.pink-bg {
+  background: #ffd1dc;
+}
+
+.dark-pink-bg {
+  background: #ff8fb3;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #ff5e8e;
+  color: white;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.cat {
+  width: 280px;
+  transition: transform 0.12s ease;
+}
+
+.cat-wrap {
+  position: relative;
+}
+
+/* FLOATING EFFECT (ALL CATS) */
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* BUTTON PRESS EFFECT */
+.press {
+  transform: scale(0.93);
+}
+
+/* TEXT BUBBLE */
+.bubble {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.bubble.side {
+  position: absolute;
+  left: 105%;
+  top: 40%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  top: -20px;
+  font-size: 20px;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
