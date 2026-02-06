@@ -14,8 +14,20 @@
     <img src="cat.png" id="loginCat" class="cat floating">
     <div id="loginBubble" class="bubble hidden"></div>
 
-    <input id="username" placeholder="Username">
-    <input id="password" type="password" placeholder="Password">
+    <input id="username"
+       placeholder="Username"
+       autocapitalize="off"
+       autocorrect="off"
+       spellcheck="false">
+
+    <input id="password"
+       type="password"
+       placeholder="Password"
+       inputmode="numeric"
+       autocapitalize="off"
+       autocorrect="off"
+       spellcheck="false">
+
     <button onclick="login()">Login</button>
   </div>
 </div>
