@@ -15,18 +15,18 @@
     <div id="loginBubble" class="bubble hidden"></div>
 
     <input id="username"
-       placeholder="Username"
-       autocapitalize="off"
-       autocorrect="off"
-       spellcheck="false">
+           placeholder="Username"
+           autocapitalize="off"
+           autocorrect="off"
+           spellcheck="false">
 
     <input id="password"
-       type="password"
-       placeholder="Password"
-       inputmode="numeric"
-       autocapitalize="off"
-       autocorrect="off"
-       spellcheck="false">
+           type="password"
+           placeholder="Password"
+           inputmode="numeric"
+           autocapitalize="off"
+           autocorrect="off"
+           spellcheck="false">
 
     <button onclick="login()">Login</button>
   </div>
@@ -35,7 +35,11 @@
 <!-- MAIN PAGE -->
 <div id="mainPage" class="page pink-bg">
   <div class="cat-wrap">
-    <img src="default.gif" id="mainCat" class="cat floating">
+    <!-- FLOATING WRAPPER -->
+    <div class="cat-float">
+      <img src="default.gif" id="mainCat" class="cat">
+    </div>
+
     <div id="textBubble" class="bubble side hidden"></div>
   </div>
 
