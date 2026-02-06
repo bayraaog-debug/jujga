@@ -28,14 +28,18 @@ function login() {
   }
 
   loginCat.src = "cat.png";
+
   setTimeout(() => {
+    document.body.style.zoom = "1";   // reset zoom
+    window.scrollTo(0, 0);            // reset scroll
+
     document.getElementById("loginPage").classList.remove("active");
     document.getElementById("mainPage").classList.add("active");
     updateCat();
   }, 500);
 }
 
-// MAIN CAT CLICK — UNIVERSAL
+// CAT CLICK (ALL STATES)
 cat.addEventListener("click", () => {
   cat.classList.add("press");
   setTimeout(() => cat.classList.remove("press"), 120);
