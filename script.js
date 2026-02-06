@@ -20,7 +20,6 @@ function login() {
   const u = document.getElementById("username").value.trim();
   const p = document.getElementById("password").value.trim();
 
-
   if (u !== USER || p !== PASS) {
     loginCat.src = "angry.png";
     loginBubble.innerText = "hudlaa yriadai";
