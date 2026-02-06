@@ -1,10 +1,8 @@
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
-body {
+/* STOP MOBILE DOUBLE TAP ZOOM */
+html, body {
+  touch-action: manipulation;
   margin: 0;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .page {
@@ -59,17 +57,13 @@ button {
   gap: 10px;
 }
 
-.cat {
-  width: 280px;
-  transition: transform 0.12s ease;
-}
-
+/* CAT WRAP */
 .cat-wrap {
   position: relative;
 }
 
-/* FLOATING EFFECT (ALL CATS) */
-.floating {
+/* FLOATING EFFECT (WRAPPER) */
+.cat-float {
   animation: float 4s ease-in-out infinite;
 }
 
@@ -78,12 +72,19 @@ button {
   50% { transform: translateY(-12px); }
 }
 
-/* BUTTON PRESS EFFECT */
-.press {
+/* CAT IMAGE (PNG + GIF) */
+.cat {
+  width: 280px;
+  transition: transform 0.12s ease;
+  pointer-events: auto;
+}
+
+/* BUTTON PRESS EFFECT (ALL STATES) */
+.cat.press {
   transform: scale(0.93);
 }
 
-/* TEXT BUBBLE */
+/* TEXT BUBBLE (MOBILE SAFE) */
 .bubble {
   background: white;
   padding: 6px 12px;
@@ -92,8 +93,12 @@ button {
 
 .bubble.side {
   position: absolute;
-  left: 105%;
-  top: 40%;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  white-space: nowrap;
+  max-width: 90vw;
 }
 
 .hidden {
@@ -106,6 +111,7 @@ button {
   top: -20px;
   font-size: 20px;
   animation: fall linear;
+  pointer-events: none; /* critical */
 }
 
 @keyframes fall {
