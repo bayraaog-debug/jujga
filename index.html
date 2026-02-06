@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="page active pink-bg">
+  <div class="card">
+    <img src="cat.png" id="loginCat" class="cat floating">
+    <div id="loginBubble" class="bubble hidden"></div>
+
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- MAIN PAGE -->
+<div id="mainPage" class="page pink-bg">
+  <div class="cat-wrap">
+    <img src="default.gif" id="mainCat" class="cat floating">
+    <div id="textBubble" class="bubble side hidden"></div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="toggleSing()">🎵 Sing</button>
+    <button onclick="toggleHearts()">💖 Hearts</button>
+  </div>
+
+  <audio id="song" src="song.mp3"></audio>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
