@@ -1,4 +1,4 @@
-/* STOP DOUBLE TAP ZOOM */
+/* STOP MOBILE ZOOM */
 html, body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -33,14 +33,14 @@ html, body {
   text-align: center;
 }
 
-/* INPUTS – FONT SIZE 16px STOPS ZOOM */
+/* INPUTS — 16px prevents zoom */
 input {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 16px; /* 🔥 critical */
+  font-size: 16px;
 }
 
 button {
@@ -68,7 +68,12 @@ button {
   animation: float 4s ease-in-out infinite;
 }
 
-/* CAT IMAGE (PNG + GIF) */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* CAT IMAGE */
 .cat {
   width: 280px;
   transition: transform 0.12s ease;
@@ -80,13 +85,7 @@ button {
   transform: scale(0.93);
 }
 
-/* FLOAT ANIMATION */
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-/* TEXT BUBBLE */
+/* TEXT BUBBLE (MOBILE SAFE) */
 .bubble {
   background: white;
   padding: 6px 12px;
