@@ -48,6 +48,10 @@ function login() {
 
 // CAT CLICK — PRESS + VIBRATION
 cat.addEventListener("click", () => {
+  // 🔥 VIBRATION MUST BE IMMEDIATE
+  vibrate(10);
+
+  // press effect
   cat.classList.add("press");
   setTimeout(() => cat.classList.remove("press"), 120);
 
@@ -56,18 +60,16 @@ cat.addEventListener("click", () => {
 
   clickTimer = setTimeout(() => {
     if (clickCount === 1) {
-      vibrate(10);
       showText("Haildai 💖");
     } else if (clickCount === 2) {
-      vibrate(18);
       showText("Maaw 🐱");
     } else if (clickCount >= 4) {
-      vibrate(35);
       showText("Nooyoldo 😢");
     }
     clickCount = 0;
   }, 1000);
 });
+
 
 function showText(text) {
   bubble.innerText = text;
