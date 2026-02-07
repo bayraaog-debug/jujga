@@ -15,6 +15,13 @@ const loginBubble = document.getElementById("loginBubble");
 const cat = document.getElementById("mainCat");
 const bubble = document.getElementById("textBubble");
 
+// VIBRATION HELPER (PHONE ONLY)
+function vibrate(ms) {
+  if (navigator.vibrate) {
+    navigator.vibrate(ms);
+  }
+}
+
 // LOGIN
 function login() {
   const u = document.getElementById("username").value.trim();
@@ -30,8 +37,8 @@ function login() {
   loginCat.src = "cat.png";
 
   setTimeout(() => {
-    document.body.style.zoom = "1";   // reset zoom
-    window.scrollTo(0, 0);            // reset scroll
+    document.body.style.zoom = "1";
+    window.scrollTo(0, 0);
 
     document.getElementById("loginPage").classList.remove("active");
     document.getElementById("mainPage").classList.add("active");
@@ -39,7 +46,7 @@ function login() {
   }, 500);
 }
 
-// CAT CLICK (ALL STATES)
+// CAT CLICK — PRESS + VIBRATION
 cat.addEventListener("click", () => {
   cat.classList.add("press");
   setTimeout(() => cat.classList.remove("press"), 120);
@@ -48,9 +55,16 @@ cat.addEventListener("click", () => {
   clearTimeout(clickTimer);
 
   clickTimer = setTimeout(() => {
-    if (clickCount === 1) showText("Haildai 💖");
-    else if (clickCount === 2) showText("Maaw 🐱");
-    else if (clickCount >= 4) showText("Nooyoldo 😢");
+    if (clickCount === 1) {
+      vibrate(10);
+      showText("Haildai 💖");
+    } else if (clickCount === 2) {
+      vibrate(18);
+      showText("Maaw 🐱");
+    } else if (clickCount >= 4) {
+      vibrate(35);
+      showText("Nooyoldo 😢");
+    }
     clickCount = 0;
   }, 1000);
 });
